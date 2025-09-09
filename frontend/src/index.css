@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-radical-red-50: #fff0f1;
+  --color-radical-red-100: #ffe3e5;
+  --color-radical-red-200: #ffcbd1;
+  --color-radical-red-300: #ffa0ab;
+  --color-radical-red-400: #ff6a7f;
+  --color-radical-red-500: #fd3354;
+  --color-radical-red-600: #eb1341;
+  --color-radical-red-700: #c70936;
+  --color-radical-red-800: #a60b35;
+  --color-radical-red-900: #8e0d34;
+  --color-radical-red-950: #500116;
+}
+
