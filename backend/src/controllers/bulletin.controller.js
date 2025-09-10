@@ -1,4 +1,6 @@
 import Bulletin from "../models/bulletin.model.js";
+import Blog from "../models/blog.model.js";
+import mongoose from "mongoose";
 import { uploadImageToCloudinary } from "../utils/imageUploader.js"; // adjust the path accordingly
 
 // Get all bulletins
@@ -56,6 +58,14 @@ export const createBulletin = async (req, res) => {
       blogId = blog;
     }
 
+    const existingBlog = await Blog.findById(blogId);
+    if (!existingBlog) {
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+      });
+    }
+
     // Upload image to Cloudinary
     if (req.files && req.files.image) {
       const uploadResult = await uploadImageToCloudinary(
@@ -77,11 +87,13 @@ export const createBulletin = async (req, res) => {
       });
     }
 
+    console.log("creating bulletin with blogId:", blogId);
+
     const newBulletin = new Bulletin({
       heading,
       subHeading,
       content,
-      blog: blogId,
+      blog: existingBlog._id,
       imageUrl,
     });
     await newBulletin.save();

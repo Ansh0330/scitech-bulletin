@@ -46,7 +46,8 @@ const CreateBulletinPage = () => {
     formData.append("image", data.image[0]);
 
     try {
-      await createBulletin(formData);
+      const res = await createBulletin(formData);
+      console.log(res)
       toast.success("Bulletin created successfully!");
       navigate("/bulletins");
     } catch {

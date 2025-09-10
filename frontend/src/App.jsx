@@ -13,6 +13,7 @@ import CreateBulletinPage from "./pages/CreateBulletinPage";
 import { useAuthStore } from "./store/useAuthStore";
 import { useEffect } from "react";
 import CreateBlogPage from "./pages/CreateBlogPage";
+import BlogsPage from "./pages/BlogsPage";
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
@@ -28,7 +29,8 @@ function App() {
         <Route path="/log-in" element={<LoginPage />} />
         <Route path="/log-in" element={<LoginPage />} />
         <Route path="/verify-email/:token" element={<VerifyEmailPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogPage />} />
+        <Route path="/blogs" element={<BlogsPage/>} />
         <Route path="/bulletins" element={<BulletinPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route

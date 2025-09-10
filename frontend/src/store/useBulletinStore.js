@@ -37,6 +37,7 @@ export const useBulletinStore = create((set) => ({
       const res = await axiosInstance.post("/bulletins/create-bulletin", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+      console.log("CREATE BULLETIN RESPONSE ---->", res.data);
       toast.success("Bulletin created successfully");
       // Optionally update bulletins list
     } catch (error) {
