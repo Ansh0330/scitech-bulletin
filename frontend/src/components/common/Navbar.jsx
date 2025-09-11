@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import { FaFacebook, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import { useAuthStore } from "../../store/useAuthStore.js"; // adjust path as needed
@@ -18,18 +18,18 @@ const Navbar = () => {
   return (
     <nav className="w-full">
       {/* Logo and Name  */}
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex justify-between items-center mt-8">
         <div className="flex items-center">
-          <Link to={"/"}>
+          {/* <Link to={"/"}>
             <img
               src={logo}
               alt="SciTech Bulletins Logo"
-              className="h-25 w-25"
+              className="h-25 w-25 rounded-full"
             />
-          </Link>
+          </Link> */}
           <Link to={"/"}>
-            <h1 className="text-3xl font-bold tracking-tight ml-3">
-              SciTech Bulletins
+            <h1 className="text-3xl font-bold tracking-tighter  ml-3">
+              Sci<span className=" bg-clip-text text-transparent bg-gradient-to-b from-radical-red-400 to-radical-red-950">Tech</span> Bulletins
             </h1>
           </Link>
         </div>
